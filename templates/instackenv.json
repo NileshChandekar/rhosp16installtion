@@ -1,0 +1,30 @@
+{
+"nodes":[
+{
+"mac":["00:50:00:00:04:00"
+],
+"name":"controller-0",
+"capabilities" : "node:ctrl-0,boot_option:local",
+"pm_type":"fake_pxe"
+},
+
+{
+"mac":["00:50:00:00:05:00"
+],
+"name":"compute-0",
+"capabilities" : "node:cmpt-0,boot_option:local",
+"pm_type":"fake_pxe"
+},
+
+{
+"mac":["00:50:00:00:06:00"
+],
+"name":"compute-1",
+"capabilities" : "node:cmpt-1,boot_option:local",
+"pm_type":"fake_pxe"
+}
+
+
+
+]
+}

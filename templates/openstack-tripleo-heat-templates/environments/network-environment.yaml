@@ -1,0 +1,39 @@
+resource_registry:
+  # Network Interface templates to use (these files must exist). You can
+  # override these by including one of the net-*.yaml environment files,
+  # such as net-bond-with-vlans.yaml, or modifying the list here.
+  # Port assignments for the Controller
+  OS::TripleO::Controller::Net::SoftwareConfig:
+    /home/stack/osp16/templates/controller.yaml
+  # Port assignments for the Compute
+  OS::TripleO::Compute::Net::SoftwareConfig:
+    /home/stack/osp16/templates/compute.yaml
+parameter_defaults:
+  # This section is where deployment-specific configuration is done
+  ControlPlaneSubnetCidr: '24'
+  NetworkDeploymentActions: ['CREATE','UPDATE']
+#  ControlPlaneDefaultRoute: 192.168.24.1
+  EC2MetadataIp: 192.168.24.1  # Generally the IP of the Undercloud
+  StorageNetCidr: '172.16.1.0/24'
+  StorageMgmtNetCidr: '172.16.3.0/24'
+  InternalApiNetCidr: '172.16.2.0/24'
+  TenantNetCidr: '172.16.5.0/24'
+  ExternalNetCidr: '192.168.100.0/24'
+  StorageNetworkVlanID: 710
+  StorageMgmtNetworkVlanID: 730
+  InternalApiNetworkVlanID: 720
+  TenantNetworkVlanID: 750
+  StorageAllocationPools: [{'start': '172.16.1.4', 'end': '172.16.1.250'}]
+  StorageMgmtAllocationPools: [{'start': '172.16.3.4', 'end': '172.16.3.250'}]
+  InternalApiAllocationPools: [{'start': '172.16.2.4', 'end': '172.16.2.250'}]
+  TenantAllocationPools: [{'start': '172.16.5.4', 'end': '172.16.5.250'}]
+  ExternalAllocationPools: [{'start': '192.168.100.50', 'end': '192.168.100.100'}]
+  ExternalInterfaceDefaultRoute: '192.168.100.1'
+  DnsServers: ["10.75.5.25","8.8.4.4"]
+  NeutronNetworkType: 'geneve,vlan'
+#  NeutronNetworkType: 'vxlan,vlan,flat'
+#  NeutronTunnelTypes: 'vxlan'
+  NeutronNetworkVLANRanges: 'datacentre:1:1000'
+  # for Linux bonds w/LACP, or "bond_mode=active-backup" for OVS active/backup.
+  BondInterfaceOvsOptions: "bond_mode=active-backup"
+
