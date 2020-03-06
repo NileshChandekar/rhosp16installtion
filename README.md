@@ -1,6 +1,6 @@
 # RHOSP-16
 
-![Image ipa](/home/nchandek/redhat/githubprojects/rhosp16installtion/images/16_1.png)
+![Image ipa](https://github.com/NileshChandekar/rhosp16installtion/blob/master/images/16_1.png)
 
 ~~~
 prov - swp11-20     eth0 nic1 ens3
