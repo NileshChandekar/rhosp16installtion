@@ -1,5 +1,7 @@
 # RHOSP-16
 
+![Image ipa](/home/nchandek/redhat/githubprojects/rhosp16installtion/images/16_1.png)
+
 ~~~
 prov - swp11-20     eth0 nic1 ens3
 ext  - swp1-2-10	eth1 nic2 ens4
