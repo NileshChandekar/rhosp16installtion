@@ -11,19 +11,34 @@
 {
 "mac":["00:50:00:00:05:00"
 ],
-"name":"compute-0",
-"capabilities" : "node:cmpt-0,boot_option:local",
+"name":"controller-1",
+"capabilities" : "node:ctrl-1,boot_option:local",
 "pm_type":"fake_pxe"
 },
 
 {
 "mac":["00:50:00:00:06:00"
 ],
+"name":"controller-2",
+"capabilities" : "node:ctrl-2,boot_option:local",
+"pm_type":"fake_pxe"
+},
+
+{
+"mac":["00:50:00:00:07:00"
+],
+"name":"compute-0",
+"capabilities" : "node:cmpt-0,boot_option:local",
+"pm_type":"fake_pxe"
+},
+
+{
+"mac":["00:50:00:00:08:00"
+],
 "name":"compute-1",
 "capabilities" : "node:cmpt-1,boot_option:local",
 "pm_type":"fake_pxe"
 }
-
 
 
 ]
